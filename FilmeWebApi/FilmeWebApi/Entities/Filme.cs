@@ -30,6 +30,5 @@ namespace FilmeWebApi.Entities
         public virtual Regizor Regizor { get; set; }
 
         public bool? Deleted { get; set; }
-
     }
 }
