@@ -19,5 +19,6 @@ namespace FilmeWebApi.Entities
         public string Prenume { get; set; }
 
         public bool? Deleted { get; set; }
+
     }
 }

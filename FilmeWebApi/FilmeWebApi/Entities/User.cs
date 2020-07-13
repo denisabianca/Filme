@@ -26,7 +26,5 @@ namespace FilmeWebApi.Entities
         public bool IsAdmin { get; set; }
 
         public bool? Deleted { get; set; }
-
-
     }
 }
