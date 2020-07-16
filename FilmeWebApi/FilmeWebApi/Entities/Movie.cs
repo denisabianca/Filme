@@ -8,26 +8,26 @@ using System.Threading.Tasks;
 
 namespace FilmeWebApi.Entities
 {
-    public class Filme
+    public class Movie
     {
         [Key] 
         public Guid Id { get; set; }
          
         [Required]
         [MaxLength(150)]
-        public string Titlu  { get; set; }
+        public string Title  { get; set; }
 
         [MaxLength(2500)]
-        public string Descrierea { get; set; }
+        public string Description { get; set; }
 
-        [MaxLength(150)]
-        public int AnulAparitiei { get; set; }
+       // [MaxLength(150)]
+        //public int Year { get; set; }
 
         [Required]
-        public Guid RegizorId { get; set; }
+        public Guid DirectorId { get; set; }
 
-        [ForeignKey("Regizor")]
-        public virtual Regizor Regizor { get; set; }
+        [ForeignKey("DirectorId")]
+        public virtual Director Director { get; set; }
 
         public bool? Deleted { get; set; }
     }

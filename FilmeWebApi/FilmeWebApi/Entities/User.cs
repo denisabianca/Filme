@@ -12,10 +12,10 @@ namespace FilmeWebApi.Entities
         public Guid ID { get; set; }
 
         [MaxLength(150)]
-        public string Nume { get; set; }
+        public string FirstName { get; set; }
 
         [MaxLength(150)]
-        public string Prenume { get; set; }
+        public string LastName { get; set; }
 
         [Required]
         public string Email { get; set; }
