@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FilmeWebApi.Contexts;
+using FilmeWebApi.Services.Repositories;
+using FilmeWebApi.Services.UnitsOfWork;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -27,7 +29,13 @@ namespace FilmeWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration["ConnectionStrings:MoviesDBConnectionString"];
-            services.AddDbContext<MoviesContext>(o => o.UseSqlServer(connectionString)); 
+            services.AddDbContext<MoviesContext>(o => o.UseSqlServer(connectionString));
+
+            //Servicies 
+
+            services.AddScoped<IUserRepository, UserRepository>();
+
+            services.AddScoped<IUserUnitOfWork, UserUnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
