@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using FilmeWebApi.Contexts;
 using FilmeWebApi.Services.Repositories;
 using FilmeWebApi.Services.UnitsOfWork;
@@ -36,6 +37,9 @@ namespace FilmeWebApi
             services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddScoped<IUserUnitOfWork, UserUnitOfWork>();
+
+            services.AddControllers();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,10 +54,7 @@ namespace FilmeWebApi
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapControllers();
             });
         }
     }
