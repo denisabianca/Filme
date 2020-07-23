@@ -35,8 +35,11 @@ namespace FilmeWebApi
             //Servicies 
 
             services.AddScoped<IUserRepository, UserRepository>();
-
             services.AddScoped<IUserUnitOfWork, UserUnitOfWork>();
+            
+            services.AddScoped<IMovieRepository, MovieRepository>();
+            services.AddScoped<IDirectorRepository, DirectorRepository>();
+            services.AddScoped<IMovieUnitOfWork, MovieUnitOfWork>();
 
             services.AddControllers();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

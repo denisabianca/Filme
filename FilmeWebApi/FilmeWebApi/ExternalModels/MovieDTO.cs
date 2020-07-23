@@ -13,8 +13,8 @@ namespace FilmeWebApi.ExternalModels
 
         public string Description { get; set; }
 
-        public Guid AuthorId { get; set; }
+        public Guid DirectorId { get; set; }
 
-        public DirectorDTO Author { get; set; }
+        public DirectorDTO Director { get; set; }
     }
 }
